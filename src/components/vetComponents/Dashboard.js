@@ -50,10 +50,18 @@ const Dashboard=()=>{
             debugger
             })
         }
+        const [time,setTime] = useState(0);
 
+        const currentTime=()=>{
+            var today = new Date().toLocaleString();
+            setTime(today);
+        }
+        setTimeout(currentTime, 1000)
 
+    
     return(
         <div>
+            <time onLoad={currentTime} >{time}</time><br></br>
             Search: <input type="text" name="search" value={search} onChange={(e)=>{setSearch(e.target.value)}} /> <br/><br/>
 
             <input type="datetime-local" id="startTime" name="startTime" onChange={(e)=>{setSTime(e.target.value)}}></input>

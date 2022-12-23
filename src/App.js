@@ -4,6 +4,7 @@ import VetList from './components/userComponents/VetList';
 import ShopView from './components/userComponents/ShopView';
 import PetList from './components/userComponents/PetList';
 import Dashboard from './components/vetComponents/Dashboard';
+import CreateAppinments from './components/vetComponents/CreateAppinments';
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/pets" element={<PetList/>}></Route>
             {/* Vet */}
                 <Route path="/vet/dashboard" element={<Dashboard/>}></Route>
+                <Route path="/vet/create/appointment" element={<CreateAppinments/>}></Route>
 
           </Routes>
       </Router>
