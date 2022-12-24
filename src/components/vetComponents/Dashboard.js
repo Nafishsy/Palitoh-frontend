@@ -41,7 +41,7 @@ const Dashboard=()=>{
         const searchByTime=()=>{
             const data = {StartDate:Stime,EndDate:Etime,Id:2} //Id 2 diye rakhsi login er por changes anbo
             debugger
-            axiosConfig.post("vet/appointments/search/name",data).then
+            axiosConfig.post("vet/appointments/search/date",data).then
             ((rsp)=>{
                 // setMovies(rsp.data)
                 setData(rsp.data);
@@ -50,23 +50,17 @@ const Dashboard=()=>{
             debugger
             })
         }
-        const [time,setTime] = useState(0);
 
-        const currentTime=()=>{
-            var today = new Date().toLocaleString();
-            setTime(today);
-        }
-        setTimeout(currentTime, 1000)
 
     
     return(
         <div>
-            <time onLoad={currentTime} >{time}</time><br></br>
+            
             Search: <input type="text" name="search" value={search} onChange={(e)=>{setSearch(e.target.value)}} /> <br/><br/>
 
-            <input type="datetime-local" id="startTime" name="startTime" onChange={(e)=>{setSTime(e.target.value)}}></input>
+            <input type="datetime-local" id="startTime" name="startTime" onSelect={(e)=>{setSTime(e.target.value)}}></input>
             To
-            <input type="datetime-local" id="lastTime" name="lastTime" onChange={(e)=>{setETime(e.target.value)}}></input>
+            <input type="datetime-local" id="lastTime" name="lastTime" onSelect={(e)=>{setETime(e.target.value)}}></input>
 
             <button onClick={(e)=>{searchByTime()}}>Request consultation</button>
             <table border="1px solid" width='100%'>

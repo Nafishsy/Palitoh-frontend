@@ -43,18 +43,6 @@ const CreateAppinments=()=>{
             
         })
     }
-    const [time,setTime] = useState(0);
-
-    const currentTime=()=>{
-        var today = new Date().toLocaleString();
-        setTime(today);
-    }
-    setTimeout(currentTime, 1000)
-
-    useEffect(()=>{
-        currentTime();
-        
-    },[time]);
 
     return(
         <div>
@@ -64,17 +52,12 @@ const CreateAppinments=()=>{
             CustomerId
             VetId
              */}
-            <time onLoad={currentTime} value={time}>{time}</time>
             <form onSubmit={handleSubmit}>
             <h1>{msg}</h1>
             Patient Name: <input value={name} onChange={(e)=>{setName(e.target.value)}} type="text"/><span>{errs.name? errs.name[0]:''}</span><br/>
             Patient : <input value={description} onChange={(e)=>{setDescription(e.target.value)}} type="text"/><span >{errs.description? errs.description[0]:''}</span><br/>
+            </form>
 
-
-            Movie File: <input type="file" onChange={(e)=>{setMovie(e.target.files[0])}} name="movie"></input> <span>{errs.movie? errs.movie[0]:''} </span><br/>
-            Banner: <input type="file" onChange={(e)=>{setBanner(e.target.files[0])}} name="banner"></input> <span>{errs.banner? errs.banner[0]:''}</span><br/>
-            <input type="submit" value="Upload"/> 
-        </form>
         </div>
     )
 }

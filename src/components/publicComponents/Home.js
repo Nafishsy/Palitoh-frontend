@@ -9,38 +9,32 @@ const Home=()=>{
     const [password,setPassword] = useState("");
     const [errs,setErrs] = useState("");
 
-    const handleHome=(event)=>{
+    const handleLogin=(event)=>{
         event.preventDefault();
-        const data={username:username,password:password};
+        const data={UserName:username,Password:password};
         // debugger;
         axiosConfig.post("login",data).
         then((succ)=>{
-            
-            var token=succ.data.token.token;
-            var user =succ.data.user;           
-            //var message=succ.data.msg; off kore rakhsi alert marbo pore
             debugger
+            var token=succ.data.Token.AccessToken;
+            var user =succ.data.user;
 
             localStorage.setItem("_authToken",token);
-            localStorage.setItem("username",username);
+            localStorage.setItem("username",succ.data.user.UserName);
+            localStorage.setItem("userId",succ.data.user.Id);
             
-            console.log(user);
-            console.log(token);
-            debugger;
-
-            alert("Hoise")
-            
-            if(user.role==="Admin"){                
+            if(user.Type==="Admin"){                
                 debugger
                 window.location.href="/Admin/Home";
             }
-            else if (user.role=="SubAdmin"){
-                localStorage.setItem("role",'SubAdmin');
-                alert(localStorage.getItem("role"));
-                window.location.href="/SubAdmin/home";
+            else if (user.Type==="Vet"){
+                window.location.href="/Vet/home";
             }
-            else if (user.role=="Customer"){
-                window.location.href="/customer/home";
+            else if (user.Type==="Customer"){
+                window.location.href="/Customer/home";
+            }
+            else if (user.Type==="Shop"){
+                window.location.href="/Shop/home";
             }
 
         },(erros)=>{
@@ -54,7 +48,7 @@ const Home=()=>{
     return(
         <div>
             <center>
-                <h1>DEKHO</h1>
+                <h1>Palitoh</h1>
             
             <br/> <hr/>
             <form onSubmit={handleLogin}>
@@ -66,7 +60,7 @@ const Home=()=>{
             </form>
             <span>{errs.msg? errs.msg:''}</span><br/>
             Don't have an account ? <button><Link to={`/registration`} >REGISTER </Link></button> <br/><br/>
-            <button><Link to={`/forgetpassword`} >Forgot Password ?</Link></button> 
+            {/* <button><Link to={`/forgetpassword`} >Forgot Password ?</Link></button>  */}
             </center>
         </div>
     )

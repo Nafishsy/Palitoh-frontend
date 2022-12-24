@@ -5,15 +5,26 @@ import ShopView from './components/userComponents/ShopView';
 import PetList from './components/userComponents/PetList';
 import Dashboard from './components/vetComponents/Dashboard';
 import CreateAppinments from './components/vetComponents/CreateAppinments';
+import Home from './components/publicComponents/Home';
+import Registration from './components/publicComponents/Registration';
+import UserList from './components/adminComponents/UserList';
 function App() {
   return (
     <div className="App">
       <Router>
           <Routes>
+            {/* All */}
+                <Route path="/" element={<Home/>}></Route>
+                <Route path="/registration" element={<Registration/>}></Route>
+            
+            {/* Admin */}
+                <Route path="/Admin/Home" element={<UserList/>}></Route>
+
+
             {/* User */}
                 <Route path="/vets" element={<VetList/>}></Route>
                 <Route path="/shop" element={<ShopView/>}></Route>
-                <Route path="/pets" element={<PetList/>}></Route>
+                <Route path="/pets" element={<PetList/>}></Route>/vets
             {/* Vet */}
                 <Route path="/vet/dashboard" element={<Dashboard/>}></Route>
                 <Route path="/vet/create/appointment" element={<CreateAppinments/>}></Route>
