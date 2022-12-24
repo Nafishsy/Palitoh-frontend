@@ -27,6 +27,7 @@ const ReportList=()=>{
     const [search, setSearch] = useState('');
 
     useEffect(()=>{
+        
         const data = {Name:search}
         debugger
         axiosConfig.post("admin/reports/search/",data).then

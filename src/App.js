@@ -10,6 +10,7 @@ import Registration from './components/publicComponents/Registration';
 import UserList from './components/adminComponents/UserList';
 import EditUser from './components/adminComponents/EditUser';
 import ReportList from './components/adminComponents/ReportList';
+import Transaction from './components/adminComponents/Transaction';
 function App() {
   return (
     <div className="App">
@@ -23,12 +24,15 @@ function App() {
                 <Route path="/Admin/Home" element={<UserList/>}></Route>
                 <Route path="/user/edit/:id" element={<EditUser/>}></Route>
                 <Route path="/Admin/Reports" element={<ReportList/>}></Route>
+                <Route path="/Admin/Transactions" element={<Transaction/>}></Route>
 
 
             {/* User */}
+
+                <Route path="/Customer/Home" element={<PetList/>}></Route>
                 <Route path="/vets" element={<VetList/>}></Route>
                 <Route path="/shop" element={<ShopView/>}></Route>
-                <Route path="/pets" element={<PetList/>}></Route>/vets
+
             {/* Vet */}
                 <Route path="/vet/dashboard" element={<Dashboard/>}></Route>
                 <Route path="/vet/create/appointment" element={<CreateAppinments/>}></Route>
