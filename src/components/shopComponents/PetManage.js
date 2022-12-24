@@ -85,7 +85,7 @@ const PetManage=()=>{
             Type : 
 
                 <input onChange={(e)=>{setType(e.target.value)}} size={30} type="text" name="name" value={Type}/> <br/>
-                  <span>{errs.username? errs.username[0]:''}</span><br/>
+                <span>{errs.username? errs.username[0]:''}</span><br/>
 
             Gender : 
 

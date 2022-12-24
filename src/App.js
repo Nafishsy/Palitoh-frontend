@@ -14,6 +14,7 @@ import Transaction from './components/adminComponents/Transaction';
 import PetManage from './components/shopComponents/PetManage';
 import ShopManage from './components/shopComponents/ShopManage';
 import UpdatePet from './components/shopComponents/UpdatePet';
+import UpdateFood from './components/shopComponents/UpdateFood';
 function App() {
   return (
 
@@ -44,8 +45,9 @@ function App() {
 
             {/* Shop */}
                 <Route path="/shop/pet/manage" element={<PetManage/>}></Route>
-                <Route path="/shop/manage" element={<ShopManage/>}></Route>
+                <Route path="/shop/food/manage" element={<ShopManage/>}></Route>
                 <Route path="/shop/pet/update/:id" element={<UpdatePet/>}></Route>                
+                <Route path="/shop/food/update/:id" element={<UpdateFood/>}></Route>                
 
 
           </Routes>
