@@ -39,6 +39,22 @@ const UserList=()=>{
         })
         },[search])
     
+
+
+        const Delete=(id)=>{    
+            debugger
+                axiosConfig.post("admin/users/delete/"+id).
+            then((succ)=>{
+                //setMsg(succ.data.msg);
+                debugger;
+                window.location.href="/Admin/home";
+            },(err)=>{
+                debugger;
+            })
+            
+
+            
+        }
     return(
         <div>
             Search: <input type="text" name="search" value={search} onChange={(e)=>{setSearch(e.target.value)}} /> <br/><br/>
@@ -62,9 +78,8 @@ const UserList=()=>{
                         <td>{dr.Status}</td>
                         <td>{dr.Type}</td>
                         <td>
-                            <button>ADD</button>
                             <button>Update</button>
-                            <button>Delete</button>
+                            <button onClick={(e)=>{Delete(dr.Id)}}>Delete</button>
                         </td>
 
                     </tr> 
