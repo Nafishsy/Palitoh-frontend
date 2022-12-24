@@ -11,9 +11,14 @@ import UserList from './components/adminComponents/UserList';
 import EditUser from './components/adminComponents/EditUser';
 import ReportList from './components/adminComponents/ReportList';
 import Transaction from './components/adminComponents/Transaction';
+import PetManage from './components/shopComponents/PetManage';
+import ShopManage from './components/shopComponents/ShopManage';
+import UpdatePet from './components/shopComponents/UpdatePet';
 function App() {
   return (
+
     <div className="App">
+      {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link> */}
       <Router>
           <Routes>
             {/* All */}
@@ -30,12 +35,18 @@ function App() {
             {/* User */}
 
                 <Route path="/Customer/Home" element={<PetList/>}></Route>
-                <Route path="/vets" element={<VetList/>}></Route>
-                <Route path="/shop" element={<ShopView/>}></Route>
+                <Route path="/Customer/vets" element={<VetList/>}></Route>
+                <Route path="/Customer/shop" element={<ShopView/>}></Route>
 
             {/* Vet */}
                 <Route path="/vet/dashboard" element={<Dashboard/>}></Route>
                 <Route path="/vet/create/appointment" element={<CreateAppinments/>}></Route>
+
+            {/* Shop */}
+                <Route path="/shop/pet/manage" element={<PetManage/>}></Route>
+                <Route path="/shop/manage" element={<ShopManage/>}></Route>
+                <Route path="/shop/pet/update/:id" element={<UpdatePet/>}></Route>                
+
 
           </Routes>
       </Router>

@@ -51,11 +51,22 @@ const Dashboard=()=>{
             })
         }
 
+        const [time, setTime] = useState(0);
+
+        const currentTime = () => {
+          var today = new Date().toLocaleString();
+          setTime(today);
+        };
+        setTimeout(currentTime, 1000);
+
+        useEffect(() => {
+          currentTime();
+        }, [time]);
 
     
     return(
         <div>
-            
+            <time onLoad={currentTime} value={time}>{time}</time><br></br>
             Search: <input type="text" name="search" value={search} onChange={(e)=>{setSearch(e.target.value)}} /> <br/><br/>
 
             <input type="datetime-local" id="startTime" name="startTime" onSelect={(e)=>{setSTime(e.target.value)}}></input>

@@ -77,6 +77,7 @@ const ShopView=()=>{
 
     return(
         <div>
+            <h1>Shop</h1>
             <table border="1px solid" width='100%'>
                 <th>Name</th>
                 <th>Amount</th>

@@ -53,6 +53,7 @@ const VetList=()=>{
 
     return(
         <div>
+            <h1>HealthCare</h1>
             <table border="1px solid" width='100%'>
                 
                 <th>Name</th>

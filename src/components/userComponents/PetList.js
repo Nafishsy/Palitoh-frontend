@@ -25,6 +25,7 @@ const PetList=()=>{
 
     return(
         <div>
+            <h1>Pet List</h1>
             <table border="1px solid" width='100%'>
                 <th>Name</th>
                 <th>Type</th>
