@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { Navigate } from "react-router-dom";
 import axiosConfig from '../publicComponents/axiosConfig';
@@ -78,8 +79,8 @@ const UserList=()=>{
                         <td>{dr.Status}</td>
                         <td>{dr.Type}</td>
                         <td>
-                            <button>Update</button>
-                            <button onClick={(e)=>{Delete(dr.Id)}}>Delete</button>
+                            <button><Link to={`/user/edit/${dr.Id}`}>Update info </Link></button>
+                            <button onClick={(e)=>{Delete(dr.Id)}}>Ban</button>
                         </td>
 
                     </tr> 

@@ -8,6 +8,7 @@ import CreateAppinments from './components/vetComponents/CreateAppinments';
 import Home from './components/publicComponents/Home';
 import Registration from './components/publicComponents/Registration';
 import UserList from './components/adminComponents/UserList';
+import EditUser from './components/adminComponents/EditUser';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
             
             {/* Admin */}
                 <Route path="/Admin/Home" element={<UserList/>}></Route>
+                <Route path="/user/edit/:id" element={<EditUser/>}></Route>
 
 
             {/* User */}
