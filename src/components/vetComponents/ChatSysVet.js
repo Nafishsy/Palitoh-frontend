@@ -23,7 +23,7 @@ const ChatSysVet=()=>{
         },(er)=>{
 
         })
-    },[geseMessage, ashcheMessage]);
+    },);
 
     const [message,setMessage] = useState("");
    

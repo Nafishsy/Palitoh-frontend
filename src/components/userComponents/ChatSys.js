@@ -22,7 +22,7 @@ const ChatSys=()=>{
         },(er)=>{
 
         })
-    },[geseMessage, ashcheMessage]);
+    },);
 
     const [message,setMessage] = useState("");
    
