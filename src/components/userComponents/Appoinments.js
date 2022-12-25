@@ -43,7 +43,7 @@ const Appoinments=()=>{
                         
                         <td>
                             {/* <button onClick={(e)=>{Consult(d.Id)}}>Chat</button> */}
-                            <button><Link to={`/Customer/${localStorage.getItem("userId")}/Consult/${d.Id}`}>Chat</Link></button>
+                            <button><Link to={`/Customer/${localStorage.getItem("userId")}/Vet/${d.VetId}/Consult/${d.Id}`}>Chat</Link></button>
 
 
                         </td>

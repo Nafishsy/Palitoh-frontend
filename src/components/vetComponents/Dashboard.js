@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosConfig from '../publicComponents/axiosConfig';
+import { Link } from "react-router-dom";
 import TopBar from "./TopBar";
 
 const Dashboard=()=>{
@@ -97,7 +98,7 @@ const Dashboard=()=>{
                         <td>
                             <center>
                             
-                            <button onClick={(e)=>{Consult(dr.Id)}}>Chat</button>
+                            <button><Link to={`/Vet/${localStorage.getItem("userId")}/Customer/${dr.Customer_id}/Consult/${dr.Id}`}>Chat</Link></button>
 
                             </center>
                             

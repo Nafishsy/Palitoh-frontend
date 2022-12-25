@@ -1,20 +1,21 @@
 import React,{useState,useEffect} from "react";
 import axiosConfig from '../publicComponents/axiosConfig';
+
 import '../Css_for_chat/msgBox.css';
 import {useParams} from 'react-router-dom';
 import TopBar from "./TopBar";
 
-const ChatSys=()=>{
+const ChatSysVet=()=>{
 
     const [chat,setChat] = useState([]);
     const [geseMessage,setGeseMessage] = useState(false);
     const [ashcheMessage,setAshcheMessage] = useState(false);
     
     const {id} = useParams();    
-    const {v_id} = useParams();    
+    const {c_id} = useParams();    
     useEffect(()=>{
         console.log(id);
-        console.log(v_id);
+        console.log(c_id);
         debugger
         axiosConfig.get("chat/oldmessages/"+id).then((rsp)=>{ 
         debugger     
@@ -29,7 +30,7 @@ const ChatSys=()=>{
     
     const send=()=>{
         //pathabe
-        const data={Text:message,CustomerId:0,ChatId:id,Time:new Date(),VetId:1};
+        const data={Text:message,CustomerId:1,ChatId:id,Time:new Date(),VetId:0};
 
         axiosConfig.post("customer/sendtext",data).
         then((succ)=>{
@@ -102,4 +103,4 @@ const ChatSys=()=>{
     )
 }
 
-export default ChatSys;
+export default ChatSysVet;
