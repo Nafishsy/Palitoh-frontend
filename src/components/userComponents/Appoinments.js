@@ -19,6 +19,17 @@ const Appoinments=()=>{
 
     },[]);
 
+    const Report=(id)=>{    
+        debugger
+            axiosConfig.post("palitoh/vets/report/",{AccountId:id,Description:"Bad Vet"}).
+        then((succ)=>{
+            alert("Reported")
+            debugger;
+            window.location.reload();
+        },(err)=>{
+            debugger;
+        })
+    }
 
     // const Consult=(Id,vet)=>{
     //     window.location.href="/Customer/"+localStorage.getItem("userId")+"/Consult/"+Id;
@@ -44,6 +55,7 @@ const Appoinments=()=>{
                         <td>
                             {/* <button onClick={(e)=>{Consult(d.Id)}}>Chat</button> */}
                             <button><Link to={`/Customer/${localStorage.getItem("userId")}/Vet/${d.VetId}/Consult/${d.Id}`}>Chat</Link></button>
+                            <button onClick={(e)=>{Report(d.VetId)}}>Report</button>
 
 
                         </td>

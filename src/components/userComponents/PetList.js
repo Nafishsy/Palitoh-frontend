@@ -15,7 +15,7 @@ const PetList=()=>{
     },[]);
 
     const Adopt=(Id)=>{
-        axiosConfig.get("api/palitoh/adoptions/"+Id+"/adopt").then((rsp)=>{
+        axiosConfig.get("palitoh/adoptions/"+Id+"/adopt").then((rsp)=>{
             alert("Hoise");
             debugger
         },(er)=>{

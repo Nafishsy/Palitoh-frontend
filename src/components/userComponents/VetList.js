@@ -19,7 +19,12 @@ const VetList=()=>{
 
     const ConsultationReq=(Id)=>{
         debugger
-        axiosConfig.post("customer/appointment/request/vet",{ CustomerId: localStorage.getItem("userId"),VetId: Id,AppointmentDate:time}).then((rsp)=>{
+        var data = {
+          CustomerId: localStorage.getItem("userId"),
+          VetId: Id,
+          AppointmentDate: time,
+        };
+        axiosConfig.post("customer/appointment/request/vet",data).then((rsp)=>{
             debugger
             alert("Consultation Hoise")
         },(er)=>{
