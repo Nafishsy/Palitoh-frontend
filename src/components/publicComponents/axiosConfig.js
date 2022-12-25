@@ -1,25 +1,28 @@
 import axios from "axios";
+import { json } from "react-router-dom";
 
 const instance = axios.create({
-    baseURL: 'https://localhost:44379/api/'
+    baseURL: 'https://localhost:44379/api'
 });
 
-instance.interceptors.request.use((config)=>{
-    // config.headers.common["Authorization"]=localStorage.getItem("_authToken");
-    //alert("authorized");
+instance.interceptors.request.use((config) => {
+    config.headers.Authorization = localStorage.getItem("_authToken");
+
     debugger;
     return config;
-},(err)=>{
+}, (err) => {
     debugger;
 });
 
-instance.interceptors.response.use((rsp)=>{
-    debugger
+instance.interceptors.response.use((rsp) => {
+    debugger;
     return rsp;
-},(err)=>{
-    if(err.response.status==401){
+}, (err) => {
+    debugger;
+    if (err.response.status === 401) {
         debugger;
-        window.location.href="/";
+        alert("Auth Hoy nai");
+        window.location.href = "/";
     }
     debugger
     return Promise.reject(err);

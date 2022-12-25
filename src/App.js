@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import { BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import VetList from './components/userComponents/VetList';
 import ShopView from './components/userComponents/ShopView';
@@ -19,7 +19,7 @@ function App() {
   return (
 
     <div className="App">
-      {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link> */}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
       <Router>
           <Routes>
             {/* All */}

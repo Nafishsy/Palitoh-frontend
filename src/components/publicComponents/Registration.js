@@ -33,7 +33,7 @@ const Registration=()=>{
               debugger;
             },
             (erros) => {
-              setErrs(erros.response.data);
+              setErrs(erros.response);
               console.log(errs);
               debugger;
             }

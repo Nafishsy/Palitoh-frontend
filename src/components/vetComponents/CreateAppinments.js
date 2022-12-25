@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosConfig from '../publicComponents/axiosConfig';
+import TopBar from "./TopBar";
 
 const CreateAppinments=()=>{
 
@@ -46,12 +47,7 @@ const CreateAppinments=()=>{
 
     return(
         <div>
-
-            {/* 
-            AppointmentDate
-            CustomerId
-            VetId
-             */}
+            <TopBar></TopBar>
             <form onSubmit={handleSubmit}>
             <h1>{msg}</h1>
             Patient Name: <input value={name} onChange={(e)=>{setName(e.target.value)}} type="text"/><span>{errs.name? errs.name[0]:''}</span><br/>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosConfig from '../publicComponents/axiosConfig';
+import TopBar from "./TopBar";
 
 const Dashboard=()=>{
 
@@ -66,6 +67,7 @@ const Dashboard=()=>{
     
     return(
         <div>
+            <TopBar/>
             <time onLoad={currentTime} value={time}>{time}</time><br></br>
             Search: <input type="text" name="search" value={search} onChange={(e)=>{setSearch(e.target.value)}} /> <br/><br/>
 

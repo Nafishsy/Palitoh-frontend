@@ -12,7 +12,7 @@ const Home=()=>{
     const handleLogin=(event)=>{
         event.preventDefault();
         const data={UserName:username,Password:password};
-        // debugger;
+        debugger;
         axiosConfig.post("login",data).
         then((succ)=>{
             debugger
@@ -28,13 +28,13 @@ const Home=()=>{
                 window.location.href="/Admin/Home";
             }
             else if (user.Type==="Vet"){
-                window.location.href="/Vet/home";
+                window.location.href="/vet/dashboard";
             }
             else if (user.Type==="Customer"){
                 window.location.href="/Customer/home";
             }
             else if (user.Type==="Shop"){
-                window.location.href="/Shop/home";
+                window.location.href="/shop/pet/manage";
             }
 
         },(erros)=>{
