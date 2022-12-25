@@ -3,8 +3,7 @@ import axiosConfig from '../publicComponents/axiosConfig';
 import Chart from 'react-apexcharts';
 import TopBar from "./TopBar";
 
-const AdmBarChart = () => {
-
+const AreaChart = () => {
 
     const[data,setData] = useState([]);
 
@@ -26,7 +25,7 @@ const AdmBarChart = () => {
                 <TopBar/>
 
                 <Chart
-                type="bar"
+                type="area"
                 width={1500}
                 height={700}
 
@@ -77,4 +76,4 @@ const AdmBarChart = () => {
             </div>
     )
 }
-export default AdmBarChart
+export default AreaChart
