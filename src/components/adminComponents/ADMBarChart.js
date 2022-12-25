@@ -7,15 +7,13 @@ const AdmBarChart = () => {
 
 
     const[data,setData] = useState();
-    const[data1,setData1] = useState();
-    const[data2,setData2] = useState();
+
 
     useEffect(()=>{
 
-        axiosConfig.get("/Admin/UsersListCount").then((rsp)=>{    
-            setData(rsp.data[0]+rsp.data[1])       
-            setData1(rsp.data[0]);
-            setData2(rsp.data[1]);
+        axiosConfig.get("Accounts/user/Count").then((rsp)=>{    
+            setData(rsp.data)       
+
         debugger
         },(er)=>{
             debugger;
@@ -26,7 +24,7 @@ const AdmBarChart = () => {
     return (
             <div>
                 <TopBar/>
-                <center>Total users: {data}</center>
+    
 
                 <Chart
                 type="bar"
@@ -36,13 +34,13 @@ const AdmBarChart = () => {
                 series={[
                     {
                         name:"",
-                        data:[data1,data2]
+                        data:[data[0],data[1]]
                     }
                 ]}
 
                 options={{
                     title:{
-                        text:"Customers VS SubAdmins",
+                        text:"Number of users",
                         style:{fontSize:30},
                         align:'center'
 
@@ -53,10 +51,10 @@ const AdmBarChart = () => {
                     theme:{mode:'light'},
 
                     xaxis:{
-                        categories:["Customers", "SubAdmins"],
+                        categories:["Customers", "Vets"],
                         title:{
-                            text:"User types",
-                            style:{fontSize:25, color:"#2A0944"}
+                            text:" ",
+                            style:{fontSize:12, color:"#2A0944"}
                         },
                         labels:{
                             style:{fontSize:20, color:"#2A0944"}
