@@ -34,6 +34,7 @@ const ChatSys=()=>{
         axiosConfig.post("customer/sendtext",data).
         then((succ)=>{
             setGeseMessage(!geseMessage)
+            document.getElementById("textbox").value="";
             //console.log(succ.data) //ashche
             debugger
         },(erros)=>{

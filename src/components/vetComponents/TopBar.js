@@ -22,7 +22,7 @@ const TopBar=()=>{
     return(
         <div>
             <Link to="/vet/dashboard">Home</Link> &nbsp;&nbsp;
-            <Link to="/vet/create/appointment">Consultation</Link> &nbsp;&nbsp;
+            {/* <Link to="/vet/create/appointment">Consultation</Link> &nbsp;&nbsp; */}
             <button onClick={(e)=>{LogOut()}} >Logout</button> 
         </div>
     )

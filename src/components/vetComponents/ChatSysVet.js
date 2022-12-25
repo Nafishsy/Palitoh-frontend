@@ -29,12 +29,14 @@ const ChatSysVet=()=>{
    
     
     const send=()=>{
+        
         //pathabe
         const data={Text:message,CustomerId:1,ChatId:id,Time:new Date(),VetId:0};
-
+        debugger
         axiosConfig.post("customer/sendtext",data).
         then((succ)=>{
             setGeseMessage(!geseMessage)
+            document.getElementById("textbox").value="";
             //console.log(succ.data) //ashche
             debugger
         },(erros)=>{
@@ -68,7 +70,7 @@ const ChatSysVet=()=>{
                     <div>
                         
                         {
-                        ct.CustomerId==0 ? //jodi a_id 0 hoy taile amar message
+                        ct.CustomerId==1 ? //jodi a_id 0 hoy taile amar message
                             <div class="sender-box">
                                 <div class='sender-bck'>
                                 <p key={ct.id}> {ct.Text}  </p>
@@ -91,7 +93,7 @@ const ChatSysVet=()=>{
                 </span>
                 
             <div class="textbox">  
-            <textarea onChange={(e)=>{setMessage(e.target.value)}} resize='none' ></textarea>
+            <textarea onChange={(e)=>{setMessage(e.target.value)}} resize='none' id="textbox"></textarea>
             <button onClick={(e) => { send(e.target.value) }}>Send</button>
             </div>
 
