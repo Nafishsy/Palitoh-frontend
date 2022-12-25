@@ -21,6 +21,7 @@ import AreaChart from './components/adminComponents/AreaChart';
 import ChatSys from './components/userComponents/ChatSys';
 import Appoinments from './components/userComponents/Appoinments';
 import ChatSysVet from './components/vetComponents/ChatSysVet';
+import OldOrders from './components/userComponents/OldOrders';
 function App() {
   return (
 
@@ -58,11 +59,12 @@ function App() {
 
 
             {/* Shop */}
+
                 <Route path="/shop/pet/manage" element={<PetManage/>}></Route>
                 <Route path="/shop/food/manage" element={<ShopManage/>}></Route>
                 <Route path="/shop/pet/update/:id" element={<UpdatePet/>}></Route>                
                 <Route path="/shop/food/update/:id" element={<UpdateFood/>}></Route>                
-
+                <Route path="/shop/history/" element={<OldOrders/>}></Route>               
 
           </Routes>
       </Router>
