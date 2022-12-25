@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosConfig from '../publicComponents/axiosConfig';
+import TopBar from "./TopBar";
 
 const ShopView=()=>{
 
@@ -77,6 +78,8 @@ const ShopView=()=>{
 
     return(
         <div>
+            <TopBar/>
+
             <h1>Shop</h1>
             <table border="1px solid" width='100%'>
                 <th>Name</th>

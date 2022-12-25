@@ -28,6 +28,7 @@ const Home=()=>{
                 window.location.href="/Admin/Home";
             }
             else if (user.Type==="Vet"){
+                alert(localStorage.getItem("userId"));
                 window.location.href="/vet/dashboard";
             }
             else if (user.Type==="Customer"){

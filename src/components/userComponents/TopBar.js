@@ -9,7 +9,7 @@ const TopBar=()=>{
         debugger
         axiosConfig.post("logout",data).
         then((succ)=>{  
-            alert(succ.data.msg)
+            // alert(succ.data.msg)
             localStorage.clear();
             window.location.href="/";
             debugger

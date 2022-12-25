@@ -23,7 +23,8 @@ const Dashboard=()=>{
     const [search, setSearch] = useState('');
 
     useEffect(()=>{
-        const data = {Name:search,Id:2}
+        
+        const data = {Name:search,Id:localStorage.getItem("userId")}
         debugger
         axiosConfig.post("vet/appointments/search/name",data).then
         ((rsp)=>{
@@ -75,7 +76,7 @@ const Dashboard=()=>{
             To
             <input type="datetime-local" id="lastTime" name="lastTime" onSelect={(e)=>{setETime(e.target.value)}}></input>
 
-            <button onClick={(e)=>{searchByTime()}}>Request consultation</button>
+            <button onClick={(e)=>{searchByTime()}}>Search consultation</button>
             <table border="1px solid" width='100%'>
                 
                 <th>Name</th>

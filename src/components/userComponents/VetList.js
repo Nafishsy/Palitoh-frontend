@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosConfig from '../publicComponents/axiosConfig';
+import TopBar from "./TopBar";
 const VetList=()=>{
 
     const[vets,setVets] = useState([]);
@@ -53,6 +54,7 @@ const VetList=()=>{
 
     return(
         <div>
+            <TopBar/>
             <h1>HealthCare</h1>
             <table border="1px solid" width='100%'>
                 
