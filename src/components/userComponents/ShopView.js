@@ -57,7 +57,7 @@ const ShopView=()=>{
             });
 
             debugger
-            axiosConfig.post("palitoh/shop/cart",mainCart).then((rsp)=>{
+            axiosConfig.post("palitoh/shop/cart/"+localStorage.getItem('userId'),mainCart).then((rsp)=>{
                 alert("hosise");
                 ClearCart();
             },(er)=>{
@@ -71,8 +71,9 @@ const ShopView=()=>{
 
     }
     const ClearCart=()=>{
-        setCart("")
+        setCart([])
         sessionStorage.clear();
+        // window.location.reload();
         alert("cart reseted")
     }
 

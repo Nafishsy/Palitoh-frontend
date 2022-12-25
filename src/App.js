@@ -15,6 +15,7 @@ import PetManage from './components/shopComponents/PetManage';
 import ShopManage from './components/shopComponents/ShopManage';
 import UpdatePet from './components/shopComponents/UpdatePet';
 import UpdateFood from './components/shopComponents/UpdateFood';
+import ShopDetails from './components/adminComponents/ShopDetails';
 function App() {
   return (
 
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/user/edit/:id" element={<EditUser/>}></Route>
                 <Route path="/Admin/Reports" element={<ReportList/>}></Route>
                 <Route path="/Admin/Transactions" element={<Transaction/>}></Route>
+                <Route path="/Admin/Shop/Transactions" element={<ShopDetails/>}></Route>
 
 
             {/* User */}

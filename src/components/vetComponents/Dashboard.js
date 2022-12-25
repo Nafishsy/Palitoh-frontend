@@ -9,7 +9,7 @@ const Dashboard=()=>{
     useEffect(()=>{
         //dhore nitesi id=2 login add korle then korbo
         debugger
-        axiosConfig.get("vet/appointments/"+2).
+        axiosConfig.get("vet/appointments/"+localStorage.getItem("userId")).
         then((rsp)=>{
             
             setData(rsp.data);
@@ -41,7 +41,7 @@ const Dashboard=()=>{
         const [Etime, setETime] = useState('');
 
         const searchByTime=()=>{
-            const data = {StartDate:Stime,EndDate:Etime,Id:2} //Id 2 diye rakhsi login er por changes anbo
+            const data = {StartDate:Stime,EndDate:Etime,Id:localStorage.getItem("userId")} //Id 2 diye rakhsi login er por changes anbo
             debugger
             axiosConfig.post("vet/appointments/search/date",data).then
             ((rsp)=>{

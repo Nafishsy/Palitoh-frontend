@@ -11,7 +11,7 @@ const ShopDetails=()=>{
     useEffect(()=>{      
         
         debugger
-        axiosConfig.get("Admin/Consultations/Details").
+        axiosConfig.get("Admin/Shop/Details").
         then((rsp)=>{
             setData(rsp.data);
             debugger
@@ -26,9 +26,9 @@ const ShopDetails=()=>{
             <TopBar/>
             <table border="1px solid" width='100%'>
                 
-                <th>Vet Name</th>
-                <th>Patient Name</th>
-                <th>Consultation Date</th>
+                <th>Product Name</th>
+                <th>Customer Name</th>
+                <th>Purchase time</th>
 
                 
                 {
@@ -36,9 +36,9 @@ const ShopDetails=()=>{
                     
                     <tr>
 
-                        <td key={dr.Id}>{dr.VetName}</td>
+                        <td key={dr.Id}>{dr.FoodName}</td>
                         <td>{dr.CusName}</td>
-                        <td>{dr.AppointmentDate}</td>
+                        <td>{dr.RequestItemTime}</td>
 
                     </tr> 
                     )
