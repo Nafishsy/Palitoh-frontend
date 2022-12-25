@@ -65,6 +65,10 @@ const Dashboard=()=>{
           currentTime();
         }, [time]);
 
+
+        const Consult=(Id)=>{
+            window.location.href="/Customer/"+localStorage.getItem("userId")+"/Vet/"+Id+"/Consult";
+        }
     
     return(
         <div>
@@ -90,7 +94,15 @@ const Dashboard=()=>{
 
                         <td key={dr.Id}>{dr.Name}</td>
                         <td>{dr.AppointmentDate}</td>
-                        <td></td>
+                        <td>
+                            <center>
+                            
+                            <button onClick={(e)=>{Consult(dr.Id)}}>Chat</button>
+
+                            </center>
+                            
+
+                        </td>
 
                     </tr> 
                     )

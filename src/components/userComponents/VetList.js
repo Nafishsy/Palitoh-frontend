@@ -19,7 +19,7 @@ const VetList=()=>{
 
     const ConsultationReq=(Id)=>{
         debugger
-        axiosConfig.post("customer/appointment/request/vet",{ CustomerId: 1,VetId: Id,AppointmentDate:time}).then((rsp)=>{
+        axiosConfig.post("customer/appointment/request/vet",{ CustomerId: localStorage.getItem("userId"),VetId: Id,AppointmentDate:time}).then((rsp)=>{
             debugger
             alert("Consultation Hoise")
         },(er)=>{
@@ -30,7 +30,7 @@ const VetList=()=>{
     const ChangeFLG=()=>{
         setFlag(true)
         //id == 1 dhore nisi eta session ba local storage e raikha dibo login er pore
-        axiosConfig.get("customer/appointment/history/"+1).then((rsp)=>{
+        axiosConfig.get("customer/appointment/history/"+localStorage.getItem("userId")).then((rsp)=>{
             setData(rsp.data)
             debugger
             alert("Past consualtation")
@@ -50,6 +50,10 @@ const VetList=()=>{
             alert("Pay nai report")
             
         })
+    }
+
+    const Consult=(Id)=>{
+        window.location.href="/Customer/"+localStorage.getItem("userId")+"/Vet/"+Id+"/Consult";
     }
 
     return(
@@ -77,6 +81,7 @@ const VetList=()=>{
                         <td>
                             <input type="datetime-local" id="time" name="time" onSelect={(e)=>{setTime(e.target.value)}}></input>
                             <button onClick={(e)=>{ConsultationReq(vet.Id)}}>Request consultation</button>
+                            <button onClick={(e)=>{Consult(vet.Id)}}>Chat</button>
                         </td>
 
                     </tr> 

@@ -24,6 +24,7 @@ const TopBar=()=>{
             <Link to="/Customer/Home">Home</Link> &nbsp;&nbsp;
             <Link to="/Customer/vets">Consultation</Link> &nbsp;&nbsp;
             <Link to="/Customer/shop">Shop</Link> &nbsp;&nbsp;
+            <Link to="/Customer/Appointments">Appoinments</Link> &nbsp;&nbsp;
             <button onClick={(e)=>{LogOut()}} >Logout</button> 
         </div>
     )

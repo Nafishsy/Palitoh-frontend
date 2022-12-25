@@ -18,6 +18,8 @@ import UpdateFood from './components/shopComponents/UpdateFood';
 import ShopDetails from './components/adminComponents/ShopDetails';
 import AdmBarChart from './components/adminComponents/ADMBarChart';
 import AreaChart from './components/adminComponents/AreaChart';
+import ChatSys from './components/userComponents/ChatSys';
+import Appoinments from './components/userComponents/Appoinments';
 function App() {
   return (
 
@@ -44,6 +46,8 @@ function App() {
                 <Route path="/Customer/Home" element={<PetList/>}></Route>
                 <Route path="/Customer/vets" element={<VetList/>}></Route>
                 <Route path="/Customer/shop" element={<ShopView/>}></Route>
+                <Route path="/Customer/:c_id/Consult/:id" element={<ChatSys/>}></Route>
+                <Route path="/Customer/Appointments" element={<Appoinments/>}></Route>
 
             {/* Vet */}
                 <Route path="/vet/dashboard" element={<Dashboard/>}></Route>
