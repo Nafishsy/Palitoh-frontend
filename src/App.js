@@ -16,6 +16,7 @@ import ShopManage from './components/shopComponents/ShopManage';
 import UpdatePet from './components/shopComponents/UpdatePet';
 import UpdateFood from './components/shopComponents/UpdateFood';
 import ShopDetails from './components/adminComponents/ShopDetails';
+import AdmBarChart from './components/adminComponents/ADMBarChart';
 function App() {
   return (
 
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/Admin/Reports" element={<ReportList/>}></Route>
                 <Route path="/Admin/Transactions" element={<Transaction/>}></Route>
                 <Route path="/Admin/Shop/Transactions" element={<ShopDetails/>}></Route>
+                <Route path="/Admin/Shop/Transactions/Chart" element={<AdmBarChart/>}></Route>
 
 
             {/* User */}
