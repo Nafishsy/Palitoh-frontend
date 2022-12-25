@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import axiosConfig from '../publicComponents/axiosConfig';
 import { Link } from "react-router-dom";
+import TopBar from "./TopBar";
 
 
 const Transaction=()=>{
@@ -22,6 +23,7 @@ const Transaction=()=>{
 
     return(
         <div>
+            <TopBar/>
             <table border="1px solid" width='100%'>
                 
                 <th>Vet Name</th>

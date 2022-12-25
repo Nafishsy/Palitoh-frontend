@@ -1,6 +1,7 @@
 import {useParams} from 'react-router-dom';
 import {useState,useEffect}  from 'react';
 import axiosConfig from '../publicComponents/axiosConfig';
+import TopBar from './TopBar';
 
 const UpdateFood=()=>{
 
@@ -62,7 +63,7 @@ const UpdateFood=()=>{
     
     return(
         <div>
-
+            <TopBar/>
             <form onSubmit={handleUpdate}>
 
             Name:   <input onChange={(e)=>{setName(e.target.value)}} size={30} type="text" name="name" value={Name}/> <br/>

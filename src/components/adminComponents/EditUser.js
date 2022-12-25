@@ -1,6 +1,7 @@
 import {useParams} from 'react-router-dom';
 import {useState,useEffect}  from 'react';
 import axiosConfig from '../publicComponents/axiosConfig';
+import TopBar from './TopBar';
 
 const EditUser=()=>{
 
@@ -55,7 +56,7 @@ const EditUser=()=>{
     
     return(
         <div>
-
+            <TopBar/>
             <form onSubmit={handleSubmit}>
 
             Name: <input onChange={(e)=>{setName(e.target.value)}} size={30} type="text" name="name" value={name}/> <br/>

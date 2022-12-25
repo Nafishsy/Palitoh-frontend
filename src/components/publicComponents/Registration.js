@@ -28,7 +28,7 @@ const Registration=()=>{
         if (password === cpassword) {
           axiosConfig.post("Account/add", data).then(
             (succ) => {
-              alert(succ.data.msg);
+              // alert(succ.data.msg);
               window.location.href = "/";
               debugger;
             },

@@ -21,7 +21,7 @@ instance.interceptors.response.use((rsp) => {
     debugger;
     if (err.response.status === 401) {
         debugger;
-        alert("Auth Hoy nai");
+        // alert("Auth Hoy nai");
         window.location.href = "/";
     }
     debugger

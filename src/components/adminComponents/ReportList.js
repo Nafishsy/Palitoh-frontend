@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { Navigate } from "react-router-dom";
 import axiosConfig from '../publicComponents/axiosConfig';
+import TopBar from "./TopBar";
 
 const ReportList=()=>{
 
@@ -43,6 +44,7 @@ const ReportList=()=>{
     
     return(
         <div>
+            <TopBar/>
             Search: <input type="text" name="search" value={search} onChange={(e)=>{setSearch(e.target.value)}} /> <br/><br/>
             <table border="1px solid" width='100%'>
                 

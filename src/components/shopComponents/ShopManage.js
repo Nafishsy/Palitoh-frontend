@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { Navigate } from "react-router-dom";
 import axiosConfig from '../publicComponents/axiosConfig';
+import TopBar from "./TopBar";
 
 const ShopManage=()=>{
 
@@ -86,7 +87,7 @@ const ShopManage=()=>{
         
     return(
         <div>
-
+            <TopBar/>
             <h1>Pet List</h1>
 
 

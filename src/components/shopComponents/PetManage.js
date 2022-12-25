@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axiosConfig from '../publicComponents/axiosConfig';
 import { Link } from "react-router-dom";
+import TopBar from "./TopBar";
 
 const PetManage=()=>{
 
@@ -74,6 +75,7 @@ const PetManage=()=>{
     
     return(
         <div>
+            <TopBar/>
             <h1>Pet List</h1>
 
 
